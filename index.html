@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Mandi World — عالم المندي | جدة</title>
+<meta name="description" content="Mandi World — مندي ومطبخ عربي أصيل في جدة: جودة ثابتة، مكونات مختارة، وتجربة عائلية راقية.">
+<meta name="keywords" content="Mandi World, مندي جدة, مدغوط, مظبي, مطعم عربي جدة">
+<meta property="og:title" content="Mandi World — عالم المندي | جدة">
+<meta property="og:description" content="Discover authentic Mandi &amp; Arabic cuisine in Jeddah — quality ingredients, consistent taste, family dining.">
+<meta property="og:image" content="https://www.mandiworld.com.sa/images/logo/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="./assets/mandi-favicon.png" sizes="any">
+<link rel="apple-touch-icon" href="./assets/mandi-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=El+Messiri:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Tajawal:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<style>
+:root {
+  --bg-void: #120d09;
+  --bg-deep: #1c140f;
+  --bg-card: #241a13;
+  --bg-elevated: #2d2119;
+  --gold: #c9a962;
+  --gold-bright: #e8d7a8;
+  --gold-dark: #8a7239;
+  --earth: #30210e;
+  --mist: #f4efe6;
+  --muted: #b9ae9f;
+  --line: rgba(201, 169, 98, 0.22);
+  --glow: rgba(232, 215, 168, 0.28);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --font-display-ar: "El Messiri", serif;
+  --font-display-luxe: "Amiri", "Times New Roman", serif;
+  --font-western-display: "Playfair Display", "Cormorant Garamond", serif;
+  --font-body: "Tajawal", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-wordmark: "Outfit", system-ui, sans-serif;
+  --wine: #3d1218;
+  --ember: #c75c42;
+  --ember-soft: rgba(199, 92, 66, 0.35);
+  --header-h: 5rem;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.brand-img {
+  display: block;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
+}
+body {
+  font-family: var(--font-body);
+  background: var(--bg-void);
+  color: var(--mist);
+  line-height: 1.75;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+::selection {
+  background: rgba(201, 169, 98, 0.35);
+  color: #fff;
+}
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold-dark), var(--gold));
+  border-radius: 999px;
+  border: 2px solid var(--bg-deep);
+}
+#loader {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 30%, #2a2318 0%, #120d09 58%);
+  transition: opacity 0.75s var(--ease-out), visibility 0.75s;
+  pointer-events: none;
+}
+#loader.hide { opacity: 0; visibility: hidden; }
+.loader-inner { text-align: center; max-width: 92vw; }
+.loader-brand {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  animation: loaderIn 1s var(--ease-out) forwards;
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+}
+.loader-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.loader-logo-row img:first-child { height: clamp(52px, 12vw, 72px); }
+.loader-logo-row img:last-child { height: clamp(28px, 7vw, 40px); opacity: 0.95; }
+.loader-sub {
+  font-family: var(--font-display-ar);
+  font-size: 1.05rem;
+  color: var(--muted);
+  letter-spacing: 0.18em;
+}
+@keyframes loaderIn {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+#site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9000;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  transition: background 0.45s var(--ease-out), box-shadow 0.45s, backdrop-filter 0.45s;
+}
+#site-header.solid {
+  background: rgba(18, 13, 9, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  color: inherit;
+  max-width: min(72vw, 340px);
+}
+.nav-brand:hover { opacity: 0.92; }
+.nav-brand img.logo-mark { height: 48px; width: auto; }
+.nav-brand img.logo-name { height: 26px; width: auto; opacity: 0.92; }
+#site-header.solid .nav-brand img.logo-mark { height: 44px; }
+#site-header.solid .nav-brand img.logo-name { height: 24px; }
+.nav-links {
+  display: none;
+  list-style: none;
+  gap: 1.6rem;
+  align-items: center;
+}
+@media (min-width: 960px) {
+  .nav-links { display: flex; }
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.93rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: color 0.3s;
+  position: relative;
+  padding-block: 0.35rem;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--ember), var(--gold));
+  transition: width 0.45s var(--ease-out);
+}
+.nav-links a:hover {
+  color: var(--gold-bright);
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.62rem 1.1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #1a1209;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+  font-weight: 700;
+  font-size: 0.84rem;
+  box-shadow: 0 8px 26px rgba(201, 169, 98, 0.22);
+  transition: transform 0.3s, box-shadow 0.35s;
+}
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(201, 169, 98, 0.35);
+}
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-inline-start: auto;
+}
+@media (min-width: 960px) { .menu-toggle { display: none; } }
+.menu-toggle span {
+  width: 26px;
+  height: 2px;
+  background: var(--gold);
+  transition: transform 0.35s, opacity 0.35s;
+}
+.menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; }
+.menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+.mobile-drawer {
+  position: fixed;
+  inset: 0;
+  top: var(--header-h);
+  background: rgba(12, 9, 7, 0.97);
+  z-index: 8999;
+  padding: 2rem;
+  display: none;
+  flex-direction: column;
+  gap: 1.35rem;
+  border-top: 1px solid var(--line);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.4s var(--ease-out), opacity 0.4s;
+  pointer-events: none;
+}
+.mobile-drawer.open {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.mobile-drawer a {
+  color: var(--mist);
+  text-decoration: none;
+  font-family: var(--font-display-ar);
+  font-size: 1.18rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.75rem;
+}
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow: clip;
+  isolation: isolate;
+  padding-bottom: 3.25rem;
+}
+.hero-bg-layer {
+  position: absolute;
+  inset: -22%;
+  z-index: -4;
+  background: url("./assets/img-carousel-s1.jpg") center/cover no-repeat;
+  filter: saturate(1.08) contrast(1.06);
+  animation: heroKen 34s ease-in-out infinite alternate;
+  transform-origin: 52% 42%;
+}
+@keyframes heroKen {
+  from { transform: scale(1) translate3d(0, 0, 0); }
+  to { transform: scale(1.1) translate3d(-2%, 1.2%, 0); }
+}
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: 0.065;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 92% 74% at 50% 36%, transparent 18%, rgba(8, 6, 5, 0.72) 100%),
+    linear-gradient(118deg, rgba(61, 18, 24, 0.52) 0%, rgba(18, 13, 9, 0.68) 42%, rgba(28, 20, 14, 0.82) 100%);
+}
+.hero-fog {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 62% 48% at 78% 12%, rgba(201, 169, 98, 0.18) 0%, transparent 58%),
+    radial-gradient(ellipse 48% 42% at 8% 92%, rgba(199, 92, 66, 0.12) 0%, transparent 52%);
+}
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.42;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(201, 169, 98, 0.065) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 169, 98, 0.065) 1px, transparent 1px);
+  background-size: 76px 76px;
+  mask-image: radial-gradient(ellipse 88% 68% at 48% 40%, black 14%, transparent 70%);
+}
+.hero-marquee {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  margin: 0;
+  padding: 0.72rem 0;
+  border-block-start: 1px solid rgba(201, 169, 98, 0.28);
+  background: linear-gradient(180deg, rgba(10, 8, 6, 0.82), rgba(10, 8, 6, 0.94));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+.hero-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marqueeLine 46s linear infinite;
+}
+.hero-marquee__inner {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.8rem, 4vw, 2.85rem);
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+  font-family: var(--font-display-luxe);
+  font-size: clamp(0.82rem, 1.85vw, 1.05rem);
+  letter-spacing: 0.38em;
+  color: rgba(232, 215, 168, 0.78);
+  white-space: nowrap;
+}
+.hero-marquee__inner span.sep {
+  opacity: 0.45;
+  letter-spacing: 0;
+}
+@keyframes marqueeLine {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.hero-inner {
+  position: relative;
+  z-index: 3;
+  flex: 1;
+  width: 100%;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: calc(var(--header-h) + 2rem) clamp(1.25rem, 4vw, 3rem) 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-main-grid {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3rem);
+  align-items: center;
+}
+@media (min-width: 980px) {
+  .hero-main-grid {
+    grid-template-columns: minmax(0, 1.14fr) minmax(260px, 0.88fr);
+    gap: 2rem 3rem;
+  }
+}
+.hero-copy {
+  text-align: center;
+}
+@media (min-width: 980px) {
+  .hero-copy {
+    text-align: right;
+  }
+}
+.hero-kickers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  justify-content: center;
+  margin-bottom: 1.35rem;
+  opacity: 0;
+  animation: fadeUp 0.95s var(--ease-out) 0.08s forwards;
+}
+@media (min-width: 980px) {
+  .hero-kickers {
+    justify-content: flex-start;
+  }
+}
+.hero-kickers .pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  padding: 0.42rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 169, 98, 0.38);
+  background: rgba(18, 13, 9, 0.52);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+}
+.hero-kickers .pill--heat {
+  border-color: rgba(199, 92, 66, 0.48);
+  background: rgba(61, 18, 24, 0.42);
+  color: rgba(255, 218, 206, 0.96);
+}
+.hero-mega-ar {
+  font-family: var(--font-display-ar);
+  font-size: clamp(2.5rem, 7vw, 4.65rem);
+  font-weight: 700;
+  line-height: 1.11;
+  color: var(--mist);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  opacity: 0;
+  animation: fadeUp 1s var(--ease-out) 0.18s forwards;
+}
+.hero-mega-ar em {
+  font-family: var(--font-display-luxe);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold-bright);
+}
+.hero-lede-en {
+  margin-top: 1rem;
+  font-family: var(--font-western-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.08rem, 2.7vw, 1.72rem);
+  color: rgba(244, 239, 230, 0.84);
+  letter-spacing: 0.03em;
+  opacity: 0;
+  animation: fadeUp 1.05s var(--ease-out) 0.26s forwards;
+}
+.hero-rule {
+  margin: 1.85rem auto 1.45rem;
+  height: 2px;
+  width: min(320px, 70%);
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--ember), transparent);
+  opacity: 0;
+  animation: fadeUp 1s var(--ease-out) 0.3s forwards;
+}
+@media (min-width: 980px) {
+  .hero-rule {
+    margin-inline: 0 0;
+    margin-inline-start: 0;
+    margin-inline-end: auto;
+  }
+}
+.hero-showcase {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 400px);
+  opacity: 0;
+  animation: fadeUp 1.08s var(--ease-out) 0.22s forwards;
+}
+.hero-showcase-glow {
+  position: absolute;
+  inset: -28%;
+  background: radial-gradient(circle at 50% 42%, rgba(201, 169, 98, 0.28), transparent 62%);
+  filter: blur(22px);
+  z-index: 0;
+  pointer-events: none;
+}
+.hero-showcase-frame {
+  position: relative;
+  z-index: 1;
+  padding: clamp(1rem, 2.8vw, 1.45rem);
+  border-radius: 1.45rem;
+  background: linear-gradient(158deg, rgba(72, 48, 38, 0.42), rgba(12, 9, 7, 0.82));
+  border: 1px solid rgba(201, 169, 98, 0.42);
+  box-shadow:
+    0 42px 110px rgba(0, 0, 0, 0.62),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 0 1px rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transform: rotate(-2.25deg);
+}
+@media (min-width: 980px) {
+  .hero-showcase-frame {
+    transform: rotate(-3.25deg);
+  }
+}
+.hero-showcase-frame::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(132deg, rgba(232, 215, 168, 0.42), transparent 46%, rgba(199, 92, 66, 0.35));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.hero-lockup-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+.hero-lockup-row img.hero-logo { height: clamp(68px, 15vw, 104px); }
+.hero-lockup-row img.hero-name { height: clamp(34px, 7.5vw, 52px); }
+.hero-caption {
+  margin-top: 0.85rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: rgba(232, 215, 168, 0.82);
+  text-align: center;
+}
+.hero-editorial {
+  opacity: 0;
+  animation: fadeUp 1.08s var(--ease-out) 0.38s forwards;
+  margin-top: clamp(2rem, 4vw, 2.85rem);
+}
+.hero-editorial__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.35rem;
+  padding-top: 1.45rem;
+  border-top: 1px solid rgba(201, 169, 98, 0.22);
+}
+@media (min-width: 680px) {
+  .hero-editorial__row {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .hero-col-ar { text-align: right; padding-inline-end: 1rem; }
+  .hero-col-en {
+    text-align: left;
+    padding-inline-start: 1rem;
+    border-inline-start: 1px solid rgba(201, 169, 98, 0.26);
+  }
+}
+.hero-col-ar, .hero-col-en { text-align: center; }
+.hero-ar-line {
+  font-family: var(--font-display-ar);
+  font-size: clamp(1.02rem, 2.45vw, 1.28rem);
+  font-weight: 600;
+  color: rgba(244, 239, 230, 0.93);
+  line-height: 1.82;
+}
+.hero-en-brand {
+  font-family: var(--font-wordmark);
+  font-weight: 600;
+  font-size: clamp(1.2rem, 2.8vw, 1.55rem);
+  letter-spacing: 0.07em;
+  color: var(--mist);
+  display: block;
+}
+.hero-en-byline {
+  font-family: var(--font-western-display);
+  font-style: italic;
+  font-size: clamp(0.92rem, 2vw, 1.06rem);
+  color: var(--muted);
+  display: block;
+  margin-top: 0.42rem;
+}
+.hero-tagline {
+  max-width: 38rem;
+  margin: 1.65rem auto 0;
+  font-size: 1.02rem;
+  color: var(--muted);
+  text-align: center;
+  opacity: 0;
+  animation: fadeUp 1s var(--ease-out) 0.48s forwards;
+}
+.hero-tagline .en {
+  display: block;
+  font-family: var(--font-western-display);
+  font-style: italic;
+  margin-top: 0.48rem;
+  direction: ltr;
+  color: rgba(244, 239, 230, 0.82);
+}
+.hero-cta-row {
+  margin-top: 2.15rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeUp 1s var(--ease-out) 0.56s forwards;
+}
+@media (min-width: 980px) {
+  .hero-cta-row {
+    justify-content: flex-start;
+  }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.98rem 1.65rem;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.93rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.35s;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #f2e6bc 0%, var(--gold) 42%, #a27432 100%);
+  color: #1a1209;
+  box-shadow: 0 14px 42px rgba(201, 169, 98, 0.28), 0 0 0 1px rgba(61, 18, 24, 0.12);
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 46px rgba(201, 169, 98, 0.38);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--mist);
+  border: 1px solid var(--line);
+}
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold-bright);
+  transform: translateY(-3px);
+}
+.hero-scroll {
+  position: absolute;
+  bottom: calc(4.25rem + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  z-index: 5;
+}
+.hero-scroll i { color: var(--gold); }
+section {
+  position: relative;
+  padding: clamp(4rem, 10vw, 7rem) clamp(1.25rem, 4vw, 3rem);
+}
+.section-head {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+.eyebrow {
+  font-size: 0.74rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+  display: inline-block;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.65), transparent) 1;
+}
+.section-title {
+  font-family: var(--font-display-ar);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--mist);
+  line-height: 1.22;
+}
+.section-title span.en {
+  display: block;
+  font-family: var(--font-western-display);
+  font-style: italic;
+  font-size: 0.44em;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 0.5rem;
+  direction: ltr;
+}
+.lead {
+  color: var(--muted);
+  margin-top: 1rem;
+  font-size: 1.05rem;
+}
+.reveal-init {
+  opacity: 0;
+  transform: translateY(34px);
+}
+.reveal-init.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.85s var(--ease-out), transform 0.85s var(--ease-out);
+}
+.stagger-children > * { opacity: 0; transform: translateY(22px); }
+.stagger-children.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.72s var(--ease-out), transform 0.72s var(--ease-out);
+}
+.stagger-children.is-visible > *:nth-child(1) { transition-delay: 0.06s; }
+.stagger-children.is-visible > *:nth-child(2) { transition-delay: 0.14s; }
+.stagger-children.is-visible > *:nth-child(3) { transition-delay: 0.22s; }
+#story {
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(201, 169, 98, 0.07) 0%, transparent 52%),
+    var(--bg-deep);
+}
+.about-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+@media (min-width: 960px) {
+  .about-grid { grid-template-columns: 1fr 1.08fr; }
+  .story-visual--lift {
+    margin-inline-start: clamp(-1rem, -3vw, -2.75rem);
+    transform: rotate(-1.35deg);
+    box-shadow: 0 46px 110px rgba(0, 0, 0, 0.58);
+    border-radius: 1.35rem;
+  }
+}
+.story-pullquote {
+  margin-top: 2rem;
+  padding: 1.35rem 1.25rem 1.35rem 1.45rem;
+  border-inline-start: 3px solid rgba(199, 92, 66, 0.85);
+  background: linear-gradient(90deg, rgba(61, 18, 24, 0.42), transparent 72%);
+  font-family: var(--font-display-luxe);
+  font-size: clamp(1.08rem, 2.6vw, 1.42rem);
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(232, 215, 168, 0.96);
+  line-height: 1.82;
+}
+.story-visual {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  aspect-ratio: 4/5;
+  max-height: 520px;
+  box-shadow: 0 32px 78px rgba(0,0,0,0.48);
+}
+.story-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.story-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(12, 9, 7, 0.72) 100%);
+  pointer-events: none;
+}
+.story-chip {
+  position: absolute;
+  bottom: 1.35rem;
+  left: 1.35rem;
+  right: 1.35rem;
+  padding: 0.95rem 1.1rem;
+  border-radius: 0.85rem;
+  border: 1px solid var(--line);
+  background: rgba(18, 13, 9, 0.78);
+  backdrop-filter: blur(8px);
+  font-family: var(--font-display-ar);
+  font-size: 0.98rem;
+  color: var(--gold-bright);
+  text-align: center;
+  z-index: 2;
+}
+.body-serif {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  color: rgba(244, 239, 230, 0.92);
+  line-height: 1.82;
+}
+.body-serif.en {
+  direction: ltr;
+  text-align: start;
+  margin-top: 1rem;
+  font-style: italic;
+  color: var(--muted);
+}
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2.25rem;
+}
+.stat {
+  text-align: center;
+  padding: 1.15rem 0.65rem;
+  border-radius: 0.85rem;
+  border: 1px solid var(--line);
+  background: rgba(36, 26, 19, 0.62);
+}
+.stat-num {
+  font-family: var(--font-display-ar);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--gold-bright);
+}
+.stat-label { font-size: 0.82rem; color: var(--muted); margin-top: 0.35rem; }
+#signature {
+  background: var(--bg-void);
+}
+.sig-bento {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .sig-bento { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .sig-bento { grid-template-columns: repeat(3, 1fr); }
+}
+.sig-card {
+  border-radius: 1.05rem;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  background: var(--bg-card);
+  transition: transform 0.5s var(--ease-out), box-shadow 0.5s, border-color 0.35s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+.sig-card--feat {
+  border-color: rgba(201, 169, 98, 0.38);
+}
+.sig-card::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  z-index: 2;
+}
+.sig-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(201, 169, 98, 0.52);
+  box-shadow:
+    0 22px 56px rgba(0, 0, 0, 0.48),
+    0 0 36px rgba(199, 92, 62, 0.12),
+    0 0 44px var(--glow);
+}
+.sig-visual {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  height: clamp(168px, 26vw, 198px);
+  background-size: cover;
+  background-position: center;
+}
+.sig-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12,9,7,0.05) 0%, rgba(12,9,7,0.88) 100%);
+  z-index: 1;
+}
+.sig-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, 0.09) 49%, transparent 60%);
+  transform: translateX(-130%);
+  transition: transform 0.95s var(--ease-out);
+  pointer-events: none;
+  z-index: 2;
+}
+.sig-card:hover .sig-visual::after {
+  transform: translateX(130%);
+}
+.sig-tag {
+  position: absolute;
+  top: 0.55rem;
+  inset-inline-start: 0.55rem;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.32rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--gold-bright);
+  background: rgba(12, 9, 7, 0.78);
+  border: 1px solid rgba(201, 169, 98, 0.28);
+  backdrop-filter: blur(8px);
+}
+.sig-body {
+  flex: 0 0 auto;
+  padding: 1.15rem 1.1rem 1.35rem;
+}
+.sig-title-ar {
+  font-family: var(--font-display-ar);
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--mist);
+}
+.sig-title-en {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  color: var(--muted);
+  direction: ltr;
+  text-align: right;
+  margin-top: 0.25rem;
+}
+#voices {
+  background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-void) 100%);
+}
+.carousel-wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 1.35rem;
+  border: 1px solid rgba(201, 169, 98, 0.28);
+  background:
+    radial-gradient(ellipse 85% 65% at 12% 18%, rgba(199, 92, 66, 0.14) 0%, transparent 52%),
+    linear-gradient(155deg, rgba(44, 32, 24, 0.92), rgba(12, 9, 7, 0.96));
+  padding: clamp(2.25rem, 5vw, 3.25rem);
+  overflow: hidden;
+  min-height: 320px;
+  box-shadow: 0 36px 90px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+.carousel-wrap::before {
+  content: "«";
+  position: absolute;
+  top: 0.85rem;
+  inset-inline-start: 1rem;
+  font-family: var(--font-display-luxe);
+  font-size: clamp(3.5rem, 12vw, 5.5rem);
+  line-height: 1;
+  color: rgba(201, 169, 98, 0.14);
+  pointer-events: none;
+}
+.carousel-track {
+  display: flex;
+  direction: ltr;
+  transition: transform 0.72s var(--ease-out);
+}
+.t-slide {
+  flex: 0 0 100%;
+  padding: 0 0.45rem;
+  box-sizing: border-box;
+}
+.stars { color: var(--gold); margin-bottom: 1rem; letter-spacing: 0.14em; }
+.quote-ar {
+  font-family: var(--font-display-ar);
+  font-size: clamp(1.06rem, 2.6vw, 1.22rem);
+  line-height: 1.88;
+  color: var(--mist);
+}
+.quote-en {
+  font-family: var(--font-western-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--muted);
+  margin-top: 1rem;
+  direction: ltr;
+  text-align: left;
+}
+.t-author {
+  margin-top: 1.45rem;
+  font-weight: 700;
+  color: var(--gold-bright);
+}
+.t-role { font-size: 0.84rem; color: var(--muted); margin-top: 0.25rem; }
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 1.45rem;
+}
+.carousel-dots button {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  background: var(--line);
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+.carousel-dots button.active {
+  background: var(--gold);
+  transform: scale(1.22);
+}
+#locations {
+  background: var(--bg-void);
+}
+.loc-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.35rem;
+}
+@media (min-width: 900px) {
+  .loc-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.loc-card {
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+  padding: 1.55rem 1.35rem;
+  background: rgba(36, 26, 19, 0.72);
+  transition: transform 0.35s, border-color 0.35s, box-shadow 0.35s;
+}
+.loc-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201, 169, 98, 0.42);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.38);
+}
+.loc-title {
+  font-family: var(--font-display-ar);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gold-bright);
+  margin-bottom: 0.65rem;
+}
+.loc-line {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  margin-top: 0.65rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+.loc-line i { color: var(--gold); margin-top: 0.2rem; min-width: 1.15rem; text-align: center; }
+.loc-line a { color: var(--mist); text-decoration: none; }
+.loc-line a:hover { color: var(--gold-bright); }
+.loc-actions {
+  margin-top: 1.15rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+.loc-actions a {
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.48rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--mist);
+  text-decoration: none;
+  transition: border-color 0.3s, color 0.3s;
+}
+.loc-actions a:hover {
+  border-color: var(--gold);
+  color: var(--gold-bright);
+}
+#cta {
+  background:
+    radial-gradient(ellipse at 85% 0%, rgba(201, 169, 98, 0.09) 0%, transparent 46%),
+    #0c0907;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.cta-inner {
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: center;
+}
+footer {
+  background: #090705;
+  padding: 3.25rem clamp(1.25rem, 4vw, 3rem) 2.25rem;
+  border-top: 1px solid var(--line);
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  text-align: center;
+}
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+}
+.footer-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer-brand-row img:first-child { height: clamp(96px, 16vw, 140px); }
+.footer-brand-row img:last-child { height: clamp(36px, 8vw, 52px); }
+.footer-tag {
+  font-family: var(--font-display-ar);
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+}
+.footer-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.85;
+}
+.footer-meta a { color: var(--gold); text-decoration: none; }
+.footer-meta a:hover { text-decoration: underline; }
+.wa-float {
+  position: fixed;
+  bottom: 1.45rem;
+  right: 1.45rem;
+  left: auto;
+  z-index: 9500;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  text-decoration: none;
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.35);
+  transition: transform 0.3s;
+}
+.wa-float:hover { transform: scale(1.08); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .hero-bg-layer { animation: none !important; }
+  .hero-marquee__track { animation: none !important; }
+}
+</style>
+</head>
+<body>
+<!-- نشر آمن: ارفع مجلد assets كامل مع index.html (نفس المستوى). -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-brand">
+      <div class="loader-logo-row">
+        <img class="brand-img" src="./assets/mandi-logo.png" alt="" width="120" height="120" decoding="async" fetchpriority="high">
+        <img class="brand-img" src="./assets/mandi-wordmark.png" alt="Mandi World" width="220" height="48" decoding="async" fetchpriority="high">
+      </div>
+      <div class="loader-sub">جدة — مندي عربي أصيل</div>
+    </div>
+  </div>
+</div>
+
+<header id="site-header">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#hero" data-smooth aria-label="Mandi World — الرئيسية">
+      <img class="logo-mark brand-img" src="./assets/mandi-logo.png" alt="" width="96" height="96" decoding="async">
+      <img class="logo-name brand-img" src="./assets/mandi-wordmark.png" alt="Mandi World" width="200" height="40" decoding="async">
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#story" data-smooth>من نحن</a></li>
+        <li><a href="#signature" data-smooth>التشكيلة</a></li>
+        <li><a href="#voices" data-smooth>آراء الزبائن</a></li>
+        <li><a href="#locations" data-smooth>فروعنا</a></li>
+        <li><a href="#cta" data-smooth>طلبات</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#" id="nav-wa"><i class="fab fa-whatsapp" aria-hidden="true"></i> واتساب</a>
+    <button class="menu-toggle" type="button" aria-label="فتح القائمة" id="menu-toggle" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+  <a href="#story" data-smooth>من نحن</a>
+  <a href="#signature" data-smooth>التشكيلة</a>
+  <a href="#voices" data-smooth>آراء الزبائن</a>
+  <a href="#locations" data-smooth>فروعنا</a>
+  <a href="#cta" data-smooth>طلبات</a>
+  <a href="https://www.mandiworld.com.sa/digitalmenu.html" target="_blank" rel="noopener">القائمة الرقمية</a>
+</div>
+
+<main>
+  <section class="hero" id="hero">
+    <div class="hero-bg-layer" aria-hidden="true"></div>
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="hero-vignette" aria-hidden="true"></div>
+    <div class="hero-fog" aria-hidden="true"></div>
+    <div class="hero-pattern" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-main-grid">
+        <div class="hero-copy">
+          <div class="hero-kickers">
+            <span class="pill"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> جدة — المملكة</span>
+            <span class="pill pill--heat"><i class="fa-solid fa-fire-flame-curved" aria-hidden="true"></i> نار حية · بهارات محمصة · ضيافة عربية</span>
+          </div>
+          <h1 class="hero-mega-ar">عالم المندي<br><em>حيث يصبح الدخان طقسًا على المائدة.</em></h1>
+          <p class="hero-lede-en" lang="en">Slow smoke · fragrant rice · Arabic hospitality — choreographed like a flagship dining room.</p>
+          <div class="hero-rule" aria-hidden="true"></div>
+          <div class="hero-editorial">
+            <div class="hero-editorial__row">
+              <div class="hero-col-ar">
+                <p class="hero-ar-line">تجربة مندي ومأكولات عربية أصيلة — رز بشاوري حريري، مدغوط ومظبي بنفس احتراف الفنادق الكبرى، بلمسة عائلية تليق بالعزايم في جدة.</p>
+              </div>
+              <div class="hero-col-en" dir="ltr">
+                <span class="hero-en-brand">Mandi World</span>
+                <span class="hero-en-byline">Authentic Mandi · Arabic ceremony — Jeddah</span>
+              </div>
+            </div>
+          </div>
+          <p class="hero-tagline">
+            مذاق ثابت، مكوّنات مختارة، وتقديم يشبه تجربة المطاعم العالمية دون أن يفقد روح البيت العربي.
+            <span class="en">Fine-dining rhythm — Arabic soul. Built for families who feast loud and linger longer.</span>
+          </p>
+          <div class="hero-cta-row">
+            <a class="btn btn-primary" href="#" id="hero-wa"><i class="fab fa-whatsapp"></i> طلب عبر واتساب</a>
+            <a class="btn btn-ghost" href="https://www.mandiworld.com.sa/digitalmenu.html" target="_blank" rel="noopener">القائمة الرقمية</a>
+            <a class="btn btn-ghost" href="#signature" data-smooth>اكتشف التشكيلة</a>
+          </div>
+        </div>
+        <div class="hero-showcase">
+          <div class="hero-showcase-glow" aria-hidden="true"></div>
+          <div class="hero-showcase-frame">
+            <div class="hero-lockup-row">
+              <img class="hero-logo brand-img" src="./assets/mandi-logo.png" alt="" width="120" height="120" decoding="async" fetchpriority="high">
+              <img class="hero-name brand-img" src="./assets/mandi-wordmark.png" alt="Mandi World" width="240" height="56" decoding="async" fetchpriority="high">
+            </div>
+            <p class="hero-caption">العلامة الرسمية · Official mark</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-marquee" aria-hidden="true">
+      <div class="hero-marquee__track">
+        <div class="hero-marquee__inner">
+          <span>مدغوط</span><span class="sep">◆</span><span>مظبي</span><span class="sep">◆</span><span>بشاوري</span><span class="sep">◆</span><span>حنيذ</span><span class="sep">◆</span><span>كبسة</span><span class="sep">◆</span><span>ضيافة</span><span class="sep">◆</span><span>موائد عائلية</span><span class="sep">◆</span><span>جدة</span><span class="sep">◆</span>
+        </div>
+        <div class="hero-marquee__inner">
+          <span>مدغوط</span><span class="sep">◆</span><span>مظبي</span><span class="sep">◆</span><span>بشاوري</span><span class="sep">◆</span><span>حنيذ</span><span class="sep">◆</span><span>كبسة</span><span class="sep">◆</span><span>ضيافة</span><span class="sep">◆</span><span>موائد عائلية</span><span class="sep">◆</span><span>جدة</span><span class="sep">◆</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true"><span>اكتشف</span><i class="fa-solid fa-chevron-down"></i></div>
+  </section>
+
+  <section id="story">
+    <div class="section-head reveal-init">
+      <span class="eyebrow">القصة</span>
+      <h2 class="section-title">نبدأ من حلم بسيط<span class="en">Built on quality &amp; consistency</span></h2>
+      <p class="lead">بدأت Mandi World برغبة خالصة: تقديم أطعمة مرتبطة بالموروث العربي، بمكونات عضوية ومذاق يوازن بين الأصالة والوعي الصحّي.</p>
+    </div>
+    <div class="about-grid">
+      <div class="story-visual story-visual--lift reveal-init">
+        <img src="./assets/img-carousel-s3.jpg" alt="لقطة من أطباق المندي والتقديم في Mandi World" width="900" height="1200" loading="lazy" decoding="async">
+        <div class="story-chip">روائع المطبخ العربي — من المندي إلى المدغوط</div>
+      </div>
+      <div>
+        <div class="reveal-init stagger-children">
+          <p class="body-serif">حوّلنا هذا الحلم إلى تجربة طعام لا تُنسى عند افتتاح أول مطعم لنا في شارع الروضة بجدة — خدمة كيترينج ومطاعم تحتفي برحلة «عالم المندي» كما هو مذكور في الموقع الرسمي.</p>
+          <p class="body-serif en">Mandi World began with a commitment to organic ingredients and consistent flavour—first on Al Rawdah Street, Jeddah—and grew into a memorable dining &amp; catering experience.</p>
+          <blockquote class="story-pullquote reveal-init">«المذاق العربي لا يُقدَّم فقط… بل يُنسَّق كعرض مسرحي على الموائد التي تجمع العائلة.»</blockquote>
+          <div class="stats-bar">
+            <div class="stat"><div class="stat-num">٣+</div><div class="stat-label">فروع في جدة</div></div>
+            <div class="stat"><div class="stat-num">عربي</div><div class="stat-label">أصالة المذاق</div></div>
+            <div class="stat"><div class="stat-num">عائلي</div><div class="stat-label">أجواء للعزايم</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="signature">
+    <div class="section-head reveal-init">
+      <span class="eyebrow">التشكيلة</span>
+      <h2 class="section-title">بلمسات الشيف<span class="en">Seasoned smoke · fragrant rice</span></h2>
+      <p class="lead">لقطات من أطباق Mandi World كما تظهر على الموقع الرسمي — صور محلية داخل مجلد assets لتجنّب أي مشاكل نشر.</p>
+    </div>
+    <div class="sig-bento">
+      <article class="sig-card sig-card--feat reveal-init">
+        <div class="sig-visual" style="background-image:url(./assets/img-carousel-s1.jpg)">
+          <span class="sig-tag"><i class="fa-solid fa-camera"></i> من المطبخ</span>
+        </div>
+        <div class="sig-body">
+          <h3 class="sig-title-ar">طبق مندي بلمسة الدخان</h3>
+          <p class="sig-title-en">Signature smoked platter</p>
+        </div>
+      </article>
+      <article class="sig-card reveal-init">
+        <div class="sig-visual" style="background-image:url(./assets/img-carousel-s2.jpg)">
+          <span class="sig-tag"><i class="fa-solid fa-camera"></i> من المطبخ</span>
+        </div>
+        <div class="sig-body">
+          <h3 class="sig-title-ar">أرز بشاوري مع مرافقات حارة</h3>
+          <p class="sig-title-en">Rice &amp; sides — traditional pairing</p>
+        </div>
+      </article>
+      <article class="sig-card reveal-init">
+        <div class="sig-visual" style="background-image:url(./assets/img-carousel-s3.jpg)">
+          <span class="sig-tag"><i class="fa-solid fa-camera"></i> من المطبخ</span>
+        </div>
+        <div class="sig-body">
+          <h3 class="sig-title-ar">مدغوط ومظبي — حسب الطلب</h3>
+          <p class="sig-title-en">Madghout · Madhbi — cooked to preference</p>
+        </div>
+      </article>
+      <article class="sig-card reveal-init">
+        <div class="sig-visual" style="background-image:url(./assets/img-carousel-s4.jpg)">
+          <span class="sig-tag"><i class="fa-solid fa-camera"></i> من المطبخ</span>
+        </div>
+        <div class="sig-body">
+          <h3 class="sig-title-ar">موائد عائلية ولُقَط للعزايم</h3>
+          <p class="sig-title-en">Family spreads · gatherings</p>
+        </div>
+      </article>
+      <article class="sig-card reveal-init">
+        <div class="sig-visual" style="background-image:url(./assets/img-carousel-s5.jpg)">
+          <span class="sig-tag"><i class="fa-solid fa-camera"></i> من المطبخ</span>
+        </div>
+        <div class="sig-body">
+          <h3 class="sig-title-ar">حلويات عربية مختارة</h3>
+          <p class="sig-title-en">Arab sweets selection</p>
+        </div>
+      </article>
+      <article class="sig-card reveal-init">
+        <div class="sig-visual" style="background-image:url(./assets/img-carousel-s6.jpg)">
+          <span class="sig-tag"><i class="fa-solid fa-camera"></i> من المطبخ</span>
+        </div>
+        <div class="sig-body">
+          <h3 class="sig-title-ar">جولة في أطباق اليوم</h3>
+          <p class="sig-title-en">Chef picks · daily favourites</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="voices">
+    <div class="section-head reveal-init">
+      <span class="eyebrow">آراء الزبائن</span>
+      <h2 class="section-title">كلمات من تجربة حقيقية<span class="en">From Mandi World guests</span></h2>
+      <p class="lead">مقتبسة عن محتوى الصفحة الرئيسية على mandiworld.com.sa مع ترجمة عربية مقترحة للقراءة.</p>
+    </div>
+    <div class="carousel-wrap reveal-init">
+      <div class="carousel-track" id="carousel-track">
+        <div class="t-slide">
+          <div class="stars" aria-label="5 من 5">★★★★★</div>
+          <p class="quote-ar">«المكان نظيف جدًا. طلبت عبر التطبيق وتجربة سلسة. الطعام كان لذيذًا جدًا — أنصح به للأصدقاء والعائلة.»</p>
+          <p class="quote-en">“Super clean… ordered through the app — smooth experience. Food was extremely delicious.” — Moaid Mahjoub</p>
+          <div class="t-author">معاذ محجوب</div>
+          <div class="t-role">زائر — تجربة طلب</div>
+        </div>
+        <div class="t-slide">
+          <div class="stars">★★★★★</div>
+          <p class="quote-ar">«هنا تجد المذاق العربي التقليدي بقوام راقٍ — اللحم والرز كانوا على درجة الكمال.»</p>
+          <p class="quote-en">“Traditional Arabic cuisines… meat and rice cooked to perfection!” — Jov Thulagan</p>
+          <div class="t-author">جوف ثولاغان</div>
+          <div class="t-role">محب للمطبخ العربي</div>
+        </div>
+        <div class="t-slide">
+          <div class="stars">★★★★★</div>
+          <p class="quote-ar">«طلبت مندي لحم، هاشي مدغوط، وكنافة للتحلية… اللحم مستوي زين والكنافة أنصح بها — الأسعار معقولة.»</p>
+          <p class="quote-en">“Mandi meat, Hashi madgoot, Kunafa… meat well cooked — Kunafa recommended.” — Mahdi Andijani</p>
+          <div class="t-author">مهدي أنديجاني</div>
+          <div class="t-role">زائر — تشكيلة متنوعة</div>
+        </div>
+        <div class="t-slide">
+          <div class="stars">★★★★★</div>
+          <p class="quote-ar">«جرّبت أنواعًا كثيرة من مندي الماعز وهذا ضمن الأفضل — اللحم غير جاف والرز لذيذ، وأوقات التوصيل كانت الأجمل.»</p>
+          <p class="quote-en">“Top 3 goat mandi… meat well prepared, tasty rice — delivery timing was the best part.” — Dagmara Plawecka</p>
+          <div class="t-author">داغمارا بلويفكا</div>
+          <div class="t-role">زائرة — توصيل</div>
+        </div>
+      </div>
+      <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="شرائح الشهادات"></div>
+    </div>
+  </section>
+
+  <section id="locations">
+    <div class="section-head reveal-init">
+      <span class="eyebrow">فروعنا</span>
+      <h2 class="section-title">ثلاث وجهات في جدة<span class="en">Three Jeddah locations</span></h2>
+      <p class="lead">العناوين وأرقام الاتصال كما هي من صفحة المواقع الرسمية.</p>
+    </div>
+    <div class="loc-grid">
+      <article class="loc-card reveal-init">
+        <div class="loc-title">الروضة</div>
+        <div class="loc-line"><i class="fa-solid fa-location-dot"></i><span><a href="https://maps.app.goo.gl/adVjjrMbSCLRpoR18" target="_blank" rel="noopener">Hamad Al Jaser، حي الروضة، جدة</a></span></div>
+        <div class="loc-line"><i class="fa-solid fa-phone"></i><span><a href="tel:+966532385217">+966 532 385 217</a></span></div>
+        <div class="loc-line"><i class="fa-solid fa-phone"></i><span><a href="tel:+966501901504">+966 501 901 504</a></span></div>
+        <div class="loc-actions">
+          <a href="https://maps.app.goo.gl/adVjjrMbSCLRpoR18" target="_blank" rel="noopener">خرائط Google</a>
+          <a href="#" class="branch-wa" data-msg="مرحبًا Mandi World، أود الاستفسار عن فرع الروضة.">واتساب</a>
+        </div>
+      </article>
+      <article class="loc-card reveal-init">
+        <div class="loc-title">الصفا</div>
+        <div class="loc-line"><i class="fa-solid fa-location-dot"></i><span><a href="https://maps.app.goo.gl/uiNHizngJeRdnCebA?g_st=ic" target="_blank" rel="noopener">طريق الشيخ عبد العزيز بن باز، حي الصفا، جدة</a></span></div>
+        <div class="loc-line"><i class="fa-solid fa-phone"></i><span><a href="tel:+966536369797">+966 536 369 797</a></span></div>
+        <div class="loc-line"><i class="fa-solid fa-phone"></i><span><a href="tel:+966554480022">+966 554 480 022</a></span></div>
+        <div class="loc-actions">
+          <a href="https://maps.app.goo.gl/uiNHizngJeRdnCebA?g_st=ic" target="_blank" rel="noopener">خرائط Google</a>
+          <a href="#" class="branch-wa" data-msg="مرحبًا Mandi World، أود الاستفسار عن فرع الصفا.">واتساب</a>
+        </div>
+      </article>
+      <article class="loc-card reveal-init">
+        <div class="loc-title">النهضة</div>
+        <div class="loc-line"><i class="fa-solid fa-location-dot"></i><span><a href="https://maps.app.goo.gl/ej3RBggDJHW4YTXp8?g_st=com.google.maps.preview.copy" target="_blank" rel="noopener">Prince Sultan Branch Rd، حي النهضة، جدة</a></span></div>
+        <div class="loc-line"><i class="fa-solid fa-phone"></i><span><a href="tel:+966532327171">+966 532 327 171</a></span></div>
+        <div class="loc-line"><i class="fa-solid fa-phone"></i><span><a href="tel:+966550068866">+966 550 068 866</a></span></div>
+        <div class="loc-actions">
+          <a href="https://maps.app.goo.gl/ej3RBggDJHW4YTXp8?g_st=com.google.maps.preview.copy" target="_blank" rel="noopener">خرائط Google</a>
+          <a href="#" class="branch-wa" data-msg="مرحبًا Mandi World، أود الاستفسار عن فرع النهضة.">واتساب</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="cta-inner reveal-init">
+      <span class="eyebrow">جاهز للطلب؟</span>
+      <h2 class="section-title">حمّل التطبيق أو افتح القائمة الرقمية<span class="en">App · Digital menu</span></h2>
+      <p class="lead" style="margin-top:1rem;">الموقع الرسمي يوفّر زر «GET OUR APP» — هنا نوجّهك للقائمة الرقمية مباشرة، مع واتساب للتواصل السريع.</p>
+      <div class="hero-cta-row" style="justify-content:center;margin-top:2rem;">
+        <a class="btn btn-primary" href="https://www.mandiworld.com.sa/digitalmenu.html" target="_blank" rel="noopener"><i class="fa-solid fa-book-open"></i> القائمة الرقمية</a>
+        <a class="btn btn-ghost" href="https://www.mandiworld.com.sa/" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i> الموقع الرسمي</a>
+        <a class="btn btn-ghost" href="#" id="cta-wa"><i class="fab fa-whatsapp"></i> واتساب</a>
+      </div>
+      <p class="footer-meta" style="margin-top:2rem;">© Mandi World — المحتوى العلامات والأسعار الرسمية على <a href="https://www.mandiworld.com.sa/" target="_blank" rel="noopener">mandiworld.com.sa</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-row">
+        <img class="brand-img" src="./assets/mandi-logo.png" alt="" width="140" height="140" loading="lazy" decoding="async">
+        <img class="brand-img" src="./assets/mandi-wordmark.png" alt="Mandi World" width="240" height="56" loading="lazy" decoding="async">
+      </div>
+      <span class="footer-tag">جودة ثابتة — مذاق عربي أصيل</span>
+    </div>
+    <div class="footer-meta">
+      هذه الصفحة صفحة هبوط مستقلة للعرض السريع — للاطلاع الكامل على الخدمات والتحديثات زُر الموقع الرسمي.<br>
+      تصميم الواجهة: تجربة عرض RTL فاخرة — يمكنك استبدال نص التذييل باسم الاستوديو.
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="#" id="wa-float" aria-label="واتساب Mandi World"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+(function() {
+  var WA_NUMBER = '966532385217';
+  var WA_BASE = 'https://wa.me/' + WA_NUMBER;
+  function waLink(text) {
+    return WA_BASE + (text ? '?text=' + encodeURIComponent(text) : '');
+  }
+  setTimeout(function() {
+    document.getElementById('loader').classList.add('hide');
+  }, 1400);
+
+  var header = document.getElementById('site-header');
+  function onScrollNav() {
+    header.classList.toggle('solid', window.scrollY > 36);
+  }
+  window.addEventListener('scroll', onScrollNav, { passive: true });
+  onScrollNav();
+
+  document.querySelectorAll('[data-smooth]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var id = this.getAttribute('href');
+      if (!id || id.charAt(0) !== '#') return;
+      var el = document.querySelector(id);
+      if (el) {
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        closeDrawer();
+      }
+    });
+  });
+
+  var toggle = document.getElementById('menu-toggle');
+  var drawer = document.getElementById('mobile-drawer');
+  function closeDrawer() {
+    toggle.classList.remove('open');
+    drawer.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+  }
+  toggle.addEventListener('click', function() {
+    var open = !drawer.classList.contains('open');
+    toggle.classList.toggle('open', open);
+    drawer.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+  });
+  drawer.querySelectorAll('a[data-smooth]').forEach(function(l) { l.addEventListener('click', closeDrawer); });
+
+  function defaultMsg() {
+    return 'مرحبًا Mandi World، أود الاستفسار عن الطلبات والحجوزات.';
+  }
+  function wireWa() {
+    var u = waLink(defaultMsg());
+    document.getElementById('hero-wa').href = u;
+    document.getElementById('nav-wa').href = u;
+    document.getElementById('cta-wa').href = u;
+    document.getElementById('wa-float').href = u;
+  }
+  wireWa();
+
+  document.querySelectorAll('a.branch-wa').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      var msg = this.getAttribute('data-msg') || defaultMsg();
+      window.open(waLink(msg), '_blank', 'noopener,noreferrer');
+    });
+  });
+
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      if (entry.target.classList.contains('stagger-children')) entry.target.classList.add('is-visible');
+      io.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal-init').forEach(function(el) { io.observe(el); });
+
+  var track = document.getElementById('carousel-track');
+  var dotsWrap = document.getElementById('carousel-dots');
+  var slides = track.children;
+  var ci = 0;
+  var timer;
+  for (var i = 0; i < slides.length; i++) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'شريحة ' + (i + 1));
+    b.addEventListener('click', function(idx) {
+      return function() { go(idx); reset(); };
+    }(i));
+    dotsWrap.appendChild(b);
+  }
+  var dots = dotsWrap.querySelectorAll('button');
+  function go(i) {
+    ci = (i + slides.length) % slides.length;
+    track.style.transform = 'translateX(-' + (ci * 100) + '%)';
+    dots.forEach(function(d, j) { d.classList.toggle('active', j === ci); });
+  }
+  function next() { go(ci + 1); }
+  function reset() { clearInterval(timer); timer = setInterval(next, 6200); }
+  go(0);
+  reset();
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) clearInterval(timer);
+})();
+</script>
+</body>
+</html>
